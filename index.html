@@ -1,0 +1,1188 @@
+
+<!DOCTYPE html>
+<html class="no-cssgrid">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-8aca5d57fa79f2db813",applicationID:"680915709"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67339707-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-67339707-1", {"groups":"default","anonymize_ip":true});</script>
+<meta property="og:site_name" content="AMFM" />
+<link rel="canonical" href="https://amfmwv.com/intranet" />
+<meta property="og:type" content="movie" />
+<meta name="description" content="AMFM Intranet page." />
+<meta property="og:title" content="Intranet" />
+<meta property="og:description" content="AMFM Intranet page." />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>#block-450 { background-color: rgba(124,141,127,1) !important; }</style>
+<style>.message[data-message-id="2"] .field--name-field-call-to-action a { color: rgb(246,243,236) !important; }</style>
+<style>.message[data-message-id="2"] .field--name-field-message { color: rgb(255,255,255) !important; }</style>
+<style>.message[data-message-id="2"] { background-color: rgb(184,99,80) !important; }</style>
+<link rel="shortcut icon" href="/themes/custom/branch/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://amfmwv.com/intranet" />
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script>
+
+    <title>Intranet</title>
+    <link rel="stylesheet" media="all" href="./css/css_87GMcmxT1ib8ziQiU2KUAnTDFtZQV6iP-KGslA9LigM.css" />
+<link rel="stylesheet" media="all" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" media="all" href="./css/css_hRWyfnU1iGftgm25Vj6bc38YU7nU8P63Dm_ZjvZswss.css" />
+<link rel="stylesheet" media="all" href="https://use.typekit.net/vcn8tfv.css" />
+<link rel="stylesheet" media="all" href="./css/css_L2Chdc9XZsoodr4Ad4JbyI5-ODIXQ0Ej7JVTXOBBUOU.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+    
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v7.0'
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+      attribution=install_email
+      page_id="324118651006191"
+      theme_color="#31835c">
+    </div>
+  </head>
+  <body class="path-node page-node-type-page anonymous">
+    <a href="#main-content" class="visually-hidden focusable">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <a id="main-content" tabindex="-1"></a><div id="freeze" class="control" aria-controls="mobile-tray" data-freeze="off"></div>
+
+
+  
+    <div     class="region site__messages"
+  >
+  
+    
+<div   id="block-branch-globalmessage" class="block--global-messages block block--_ff4d1d2-257f-41ba-a32f-7f38b6649aaf _ff4d1d2-257f-41ba-a32f-7f38b6649aaf"
+   id="block-2" class="block--global-messages block block--_ff4d1d2-257f-41ba-a32f-7f38b6649aaf _ff4d1d2-257f-41ba-a32f-7f38b6649aaf"
+>
+  
+  
+    
+      
+
+
+<div class="field field--content embed-content__content">
+      <div class="field__items">
+          <div class="erd-list--teaser field__item">
+<article role="article" id="message-2" class="node message message--teaser hidden" data-message-id="2">
+
+    
+  
+  
+      
+
+
+<div class="field field--message message__message">
+      <div class="field__items">
+          <div class="field__item">AMFM Nursing &amp; Rehabilitation Centers are closely monitoring the spread of the coronavirus (COVID-19) and taking appropriate precautions.</div>
+        </div>
+  </div>
+
+
+
+<div class="field field--call-to-action message__call-to-action">
+  <div class="field__item">
+    <a href="/visitation"  class="button--arrow-right">Information</a>
+  </div>
+</div>
+
+  
+  <button class="message__control" aria-controls="message-2">
+    <div class="screen-reader">Close</div>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.6569 5.65685L14.2426 4.24264L10 8.48528L5.75736 4.24264L4.34315 5.65685L8.58579 9.89949L4.34315 14.1421L5.75736 15.5563L10 11.3137L14.2426 15.5563L15.6569 14.1421L11.4142 9.89949L15.6569 5.65685Z" fill="#636569"/>
+    </svg>
+  </button>
+
+</article>
+</div>
+        </div>
+  </div>
+
+  
+  </div>
+
+
+    </div>
+  
+
+
+
+  
+    <div     class="region site__mobile_tray" id="mobile-tray"
+  >
+      <div class="block block--mobile-tray-branding">
+      <svg width="39" height="42" viewBox="0 0 39 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M38.1453 22.1253C37.9453 19.5253 34.1453 17.5253 34.1453 17.5253C31.9453 16.6253 29.6453 16.6253 27.2453 17.7253C26.2453 17.8253 23.8453 19.8253 23.6453 20.7253C21.8453 24.1253 18.8453 28.8253 20.1453 32.3253C19.6453 32.4253 19.0453 32.5253 18.5453 32.6253C17.9453 32.6253 17.3453 32.6253 16.6453 32.6253H16.5453C17.2453 31.1253 17.9453 29.5253 18.4453 28.0253C19.2453 25.8253 19.8453 23.6253 20.4453 21.3253C20.8453 19.7253 21.2453 18.2253 21.5453 16.6253C22.8453 16.8253 24.2453 16.8253 25.8453 16.2253C28.3453 15.5253 29.5453 13.4253 30.7453 10.3253C31.0453 9.42532 30.9453 7.52532 30.6453 7.02532C29.6453 4.22532 27.9453 1.72532 25.3453 1.12532C14.0453 -1.37468 13.1453 12.6253 19.9453 16.0253C19.7453 17.6253 19.4453 19.3253 19.1453 20.9253C18.6453 23.1253 18.0453 25.3253 17.2453 27.4253C16.6453 29.0253 15.9453 30.6253 15.0453 32.1253C14.9453 31.4253 14.7453 30.8253 14.5453 30.2253C14.2453 29.4253 13.9453 28.7253 13.6453 28.0253C13.5453 27.9253 13.5453 27.7253 13.4453 27.6253C14.7453 26.9253 15.7453 25.3253 15.9453 22.5253V22.4253C16.3453 21.1253 16.3453 18.0253 15.9453 16.7253C14.7453 12.1253 12.4453 8.72532 6.94533 8.42532C6.94533 8.42532 2.34533 8.32532 0.445331 13.1253C-2.05467 19.7253 6.54533 28.5253 11.9453 27.9253C12.0453 28.1253 12.1453 28.3253 12.1453 28.5253C12.4453 29.2253 12.6453 29.9253 12.8453 30.6253C13.1453 31.9253 13.2453 33.2253 13.2453 34.6253C12.1453 36.0253 10.9453 37.2253 9.54533 38.1253C9.34533 38.2253 9.24533 38.3253 9.14533 38.5253C8.54533 39.2253 8.74533 40.2253 9.44533 40.8253C10.1453 41.4253 11.1453 41.2253 11.7453 40.5253C13.3453 38.5253 14.5453 36.5253 15.7453 34.4253C16.0453 34.4253 16.3453 34.4253 16.6453 34.4253C17.3453 34.4253 18.0453 34.4253 18.7453 34.3253C19.4453 34.2253 20.1453 34.0253 20.8453 33.7253C20.8453 33.7253 20.9453 33.7253 20.9453 33.6253C23.5453 36.7253 28.9453 34.2253 33.1453 31.9253C33.9453 31.4253 35.1453 30.3253 35.8453 29.6253C38.1453 27.2253 38.1453 24.7253 38.1453 22.1253Z" fill="#35835C"/>
+      </svg>
+      <button class="control" aria-controls="mobile-tray" data-freeze="off" aria-expanded="false">
+        <svg width="20" height="20" class="icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.6569 5.65685L14.2426 4.24264L10 8.48528L5.75736 4.24264L4.34315 5.65685L8.58579 9.89949L4.34315 14.1421L5.75736 15.5563L10 11.3137L14.2426 15.5563L15.6569 14.1421L11.4142 9.89949L15.6569 5.65685Z" fill="#636569"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block--mobile-nav">
+            
+  <h2 class="visually-hidden" id="block-mainnavigation-menu">Mobile navigation</h2>
+  
+
+        
+<div class="nav-wrapper">
+              <ul class="nav nav--mobile-tower">
+                    <li class="has-subtree">
+              <a href="/why-amfm" data-drupal-link-system-path="node/32">Why AMFM?</a>
+                  <button class="control" aria-controls="panel_why-amfm" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="icon icon--expand" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 0H5V5H1.19209e-07L0 7H5V12H7V7H12V5H7V0Z" fill="#636569"/>
+            </svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="icon icon--collapse" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 5V7L12 7V5H0Z" fill="#3C3E44"/>
+            </svg>
+          </button>
+                        <ul class="nav__subtree" id="panel_why-amfm">
+                    <li>
+              <a href="/our-story" data-drupal-link-system-path="node/34">Our Story</a>
+              </li>
+                <li>
+              <a href="/amfm-faces-care" data-drupal-link-system-path="node/35">AMFM Faces of Care</a>
+              </li>
+                <li>
+              <a href="/awards" data-drupal-link-system-path="node/51">Awards</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="has-subtree">
+              <a href="/services-overview" data-drupal-link-system-path="node/7">Services</a>
+                  <button class="control" aria-controls="panel_services" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="icon icon--expand" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 0H5V5H1.19209e-07L0 7H5V12H7V7H12V5H7V0Z" fill="#636569"/>
+            </svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="icon icon--collapse" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 5V7L12 7V5H0Z" fill="#3C3E44"/>
+            </svg>
+          </button>
+                        <ul class="nav__subtree" id="panel_services">
+                    <li>
+              <a href="/skilled-nursing-0" data-drupal-link-system-path="node/40">Skilled Nursing</a>
+              </li>
+                <li>
+              <a href="/rehabilitation" data-drupal-link-system-path="node/41">Rehabilitation</a>
+              </li>
+                <li>
+              <a href="/long-term-care" data-drupal-link-system-path="node/42">Long-Term Care</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="has-subtree">
+              <a href="/family-resources" data-drupal-link-system-path="node/11">Family Resources</a>
+                  <button class="control" aria-controls="panel_family-resources" aria-expanded="false">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="icon icon--expand" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 0H5V5H1.19209e-07L0 7H5V12H7V7H12V5H7V0Z" fill="#636569"/>
+            </svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="icon icon--collapse" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 5V7L12 7V5H0Z" fill="#3C3E44"/>
+            </svg>
+          </button>
+                        <ul class="nav__subtree" id="panel_family-resources">
+                    <li>
+              <a href="/visitation" data-drupal-link-system-path="node/37">Visitation</a>
+              </li>
+                <li>
+              <a href="/faqs" data-drupal-link-system-path="node/38">FAQs</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li>
+              <a href="/careers" data-drupal-link-system-path="node/30">Careers</a>
+              </li>
+                <li>
+              <a href="/locations" data-drupal-link-system-path="node/10">Locations</a>
+              </li>
+                <li>
+              <a href="/newsroom" data-drupal-link-system-path="node/31">Newsroom</a>
+              </li>
+        </ul>
+  
+
+</div>
+  </nav>
+<nav role="navigation" aria-labelledby="block-utilitynavigation-2-menu" id="block-utilitynavigation-2" class="block--mobile-utility-nav">
+            
+  <h2 class="visually-hidden" id="block-utilitynavigation-2-menu">Utility navigation</h2>
+  
+
+        
+<div class="nav-wrapper">
+              <ul class="nav nav--mobile-tower">
+                    <li>
+              <a href="/contact-us" data-drupal-link-system-path="node/124">Contact Us</a>
+              </li>
+                <li>
+              <a href="tel:800-348-1623">(800) 348-1623</a>
+              </li>
+        </ul>
+  
+
+</div>
+  </nav>
+
+<div   id="block-socialmedialinks-2" class="block--mobile-tray-social block-social-media-links block block--"
+   id="block-" class="block--mobile-tray-social block-social-media-links block block--"
+>
+  
+  
+    
+    <div class="block__content">
+    
+
+<ul class="social-media-links--platforms platforms inline horizontal">
+      <li>
+      <a class="social-media-link-icon--twitter" href="https://www.twitter.com/amfmwv"  >
+        <span class='fa fa-twitter fa-2x'></span>
+      </a>
+
+          </li>
+      <li>
+      <a class="social-media-link-icon--facebook" href="https://www.facebook.com/American-Medical-Facilities-Management-AMFM-324118651006191"  >
+        <span class='fa fa-facebook fa-2x'></span>
+      </a>
+
+          </li>
+      <li>
+      <a class="social-media-link-icon--linkedin" href="https://www.linkedin.com/company/10603658/"  >
+        <span class='fa fa-linkedin fa-2x'></span>
+      </a>
+
+          </li>
+  </ul>
+
+  </div>
+  
+  </div>
+
+
+    </div>
+  
+
+
+<header class="site__header">
+  <div class="block block--mobile-tray-control hide--desk">
+    <button class="control" aria-controls="mobile-tray" data-freeze="on">
+      <span class="screen-reader">Toggle Navigation</span>
+      <svg width="30" height="22" viewBox="0 0 30 22" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <rect width="30" height="4" fill="#3C3E44"/>
+        <rect y="9" width="30" height="4" fill="#3C3E44"/>
+        <rect y="18" width="30" height="4" fill="#3C3E44"/>
+      </svg>
+    </button>
+  </div>
+  
+  
+    <div     class="region site__header_branding"
+  >
+  
+    
+<div   id="block-sitebranding" class="block--sitebranding"
+>
+
+  <div class="block__frame">
+    
+        
+                <a href="/" title="Home" rel="home" class="site-logo">
+        <picture>
+          <source srcset="./logo.svg" media="(min-width: 68rem)" type="image/svg+xml">
+          <img src="./logo-horizontal.svg" />
+        </picture>
+      </a>
+            </div>
+
+</div>
+
+
+    </div>
+  
+
+
+    
+    <div     class="region site__header_utility"
+  >
+    <div class="layout__container layout__container--maxdesk">
+    <div class="layout layout--onecolumn">
+  <div class="header-shifter"></div>
+  <nav role="navigation" aria-labelledby="block-utilitynavigation-menu" id="block-utilitynavigation" class="block--utility-nav">
+            
+  <h2 class="visually-hidden" id="block-utilitynavigation-menu">Utility navigation</h2>
+  
+
+        
+              <ul class="nav">
+              <li>
+        <a href="/contact-us" data-drupal-link-system-path="node/124">Contact Us</a>
+              </li>
+          <li>
+        <a href="tel:800-348-1623">(800) 348-1623</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+</div>
+  </div>
+    </div>
+  
+    
+    <div     class="region site__header_nav"
+  >
+    <div class="layout__container layout__container--maxdesk">
+    <div class="layout layout--onecolumn">
+  <div class="header-shifter"></div>
+  <nav role="navigation" aria-labelledby="block-branch-main-menu-menu" id="block-branch-main-menu" class="block--main-nav">
+            
+  <h2 class="visually-hidden" id="block-branch-main-menu-menu">Main navigation</h2>
+  
+
+        
+<div class="nav-wrapper">
+              <ul class="nav">
+                    <li class="has-subtree">
+              <a href="/why-amfm" data-drupal-link-system-path="node/32">Why AMFM?</a>
+                                <ul class="nav__subtree">
+                    <li>
+              <a href="/our-story" data-drupal-link-system-path="node/34">Our Story</a>
+              </li>
+                <li>
+              <a href="/amfm-faces-care" data-drupal-link-system-path="node/35">AMFM Faces of Care</a>
+              </li>
+                <li>
+              <a href="/awards" data-drupal-link-system-path="node/51">Awards</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="has-subtree">
+              <a href="/services-overview" data-drupal-link-system-path="node/7">Services</a>
+                                <ul class="nav__subtree">
+                    <li>
+              <a href="/skilled-nursing-0" data-drupal-link-system-path="node/40">Skilled Nursing</a>
+              </li>
+                <li>
+              <a href="/rehabilitation" data-drupal-link-system-path="node/41">Rehabilitation</a>
+              </li>
+                <li>
+              <a href="/long-term-care" data-drupal-link-system-path="node/42">Long-Term Care</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="has-subtree">
+              <a href="/family-resources" data-drupal-link-system-path="node/11">Family Resources</a>
+                                <ul class="nav__subtree">
+                    <li>
+              <a href="/visitation" data-drupal-link-system-path="node/37">Visitation</a>
+              </li>
+                <li>
+              <a href="/faqs" data-drupal-link-system-path="node/38">FAQs</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="has-subtree">
+              <a href="/careers" data-drupal-link-system-path="node/30">Careers</a>
+                                <ul class="nav__subtree">
+                    <li>
+              <a href="/current-career-opportunities" data-drupal-link-system-path="node/44">Jobs at AMFM</a>
+              </li>
+                <li>
+              <a href="/cna-classes" data-drupal-link-system-path="node/45">CNA Classes</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li>
+              <a href="/locations" data-drupal-link-system-path="node/10">Locations</a>
+              </li>
+                <li class="has-subtree">
+              <a href="/newsroom" data-drupal-link-system-path="node/31">Newsroom</a>
+                                <ul class="nav__subtree">
+                    <li>
+              <a href="/video-library" data-drupal-link-system-path="node/47">Video Library</a>
+              </li>
+                <li>
+              <a href="/blog" data-drupal-link-system-path="node/48">Long-Term Care Blog</a>
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+
+</div>
+  </nav>
+
+</div>
+  </div>
+    </div>
+  
+  <div class="block block--mobile-search-link hide--desk">
+    <a href="/search">
+      <div class="screen-reader">Search</div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.45426 0C13.0599 0 16.8454 3.78549 16.8454 8.45426C16.8454 10.2208 16.2776 11.8612 15.3943 13.1861L19.4953 17.3502C20.9464 18.8013 18.8013 20.9464 17.3502 19.4953L13.1861 15.3943C11.8612 16.2776 10.2208 16.8454 8.45426 16.8454C3.78549 16.8454 0 13.0599 0 8.45426C0 3.78549 3.78549 0 8.45426 0ZM8.45426 2.46057C5.11041 2.46057 2.46057 5.11041 2.46057 8.45426C2.46057 11.735 5.11041 14.4479 8.45426 14.4479C11.735 14.4479 14.4479 11.735 14.4479 8.45426C14.4479 5.11041 11.735 2.46057 8.45426 2.46057Z" fill="#3C3E44"/>
+      </svg>
+    </a>
+  </div>
+</header><main class="site__main">
+  <div class="layout__container layout__container--maxdesk">
+    
+  
+    <div     class="region site__content"
+  >
+  
+    <div class="block block--system-messages">
+  <div class="l-contain">
+    <div data-drupal-messages-fallback class="hidden"></div>
+  </div>
+</div>
+
+<div   id="block-branch-content" class="block block--"
+   id="block-" class="block block--"
+>
+  
+  
+    
+    <div class="block__content">
+    <article role="article" about="/intranet" class="node page page--full uses-layout">
+
+    
+  <h1 class="page__title node__title screen-reader">
+        <span>Intranet</span>
+
+    </h1>
+  
+  
+      
+    <div>
+      <section  style="border-radius: 5px;" class="block block--layout layout--vpadding-regular layout--hpadding-regular" >
+    <div  class="layout__region layout__region--top">
+  
+<div   class="block block--basic basic"
+   class="block block--basic basic" id="block-449"
+>
+  
+  
+    
+    <div class="block__content">
+    
+
+
+<div class="field field--body basic__body">
+      <div class="field__items">
+          <div class="field__item"><h1 class="text-align-center">AMFM Links &amp; Resources</h1>
+</div>
+        </div>
+  </div>
+
+  </div>
+  
+  </div>
+
+</div>
+
+        <div  class="layout__container layout__container--maxdesk layout__container--paddless">
+                      <div  class="layout layout--onecolumn layout--onecolumn-100 layout--width-67">
+        <div  class="layout__region layout__region--content">
+          
+<div   class="block block--call-to-action-simple-banner call-to-action-simple-banner"
+   class="block block--call-to-action-simple-banner call-to-action-simple-banner" id="block-450"
+>
+  
+  
+    
+    <div class="block__content">
+    
+
+
+<div class="field field--text call-to-action-simple-banner__text">
+      <div class="field__items">
+          <div class="field__item">Looking for IT Support?</div>
+        </div>
+  </div>
+
+
+<div class="field field--link call-to-action-simple-banner__link">
+      <a href="/information-technology-support" class="button button--light button--arrow-right">Submit a Ticket</a>
+  </div>
+
+  </div>
+  
+  </div>
+
+        </div>
+      </div>
+              </div>
+    
+    <div >
+  
+</div>
+  </section>
+  <section  style="border-radius: 5px;" class="block block--layout layout--vpadding-regular layout--hpadding-regular" >
+    <div  class="layout__region layout__region--top">
+  
+<div   class="block block--basic basic"
+   class="block block--basic basic" id="block-451"
+>
+  
+  
+    
+    <div class="block__content">
+    
+
+
+<div class="field field--body basic__body">
+      <div class="field__items">
+          <div class="field__item"><h2 class="text-align-center">Frequently Used Links</h2>
+</div>
+        </div>
+  </div>
+
+  </div>
+  
+  </div>
+
+</div>
+
+        <div  class="layout__container layout__container--maxdesk">
+                <div  class="layout layout--twocols layout--twocols-50-50 layout--width-67">
+  <div  class="layout__region layout__region--first">
+    
+<div   class="block block--basic basic"
+   class="block block--basic basic" id="block-452"
+>
+  
+  
+    
+    <div class="block__content">
+    
+
+
+<div class="field field--body basic__body">
+      <div class="field__items">
+          <div class="field__item"><ul>
+	<li><a href="https://login.pointclickcare.com/">PointClickCare User Login</a></li>
+	<li><a href="https://traycard.pointclickcare.com/">PointClickCare Nutrition Management</a></li>
+	<li><a href="https://carolinafees.com/schedule-a-fees/">Carolina Login</a></li>
+	<li><a href="https://login.optimahcs.com/">RehabOptima Login</a></li>
+	<li><a href="https://login.advancedmd.com/">AdvanceMD Login</a></li>
+	<li><a href="https://secure.pointright.com/Account/Login">PointRight Login</a></li>
+	<li><a href="http://www.clinisign.com/">CliniSign Login</a></li>
+	<li><a href="https://login.microsoftonline.com/">Microsoft 365 Login</a></li>
+	<li><a href="https://ess.barracudanetworks.com/">Barracuda ESS</a></li>
+	<li><a href="https://buyer.procurementpartners.com/amfm">Procurement Partners</a></li>
+	<li><a href="https://newton.newtonsoftware.com/login">Newton Application Tracking System</a></li>
+	<li><a href="http://auth.onshift.com/login">On Shift</a></li>
+	<li><a href="http://www.paycor.com/">Paycor</a></li>
+</ul>
+</div>
+        </div>
+  </div>
+
+  </div>
+  
+  </div>
+
+  </div>
+
+  <div  class="layout__region layout__region--second">
+    
+<div   class="block block--basic basic"
+   class="block block--basic basic" id="block-453"
+>
+  
+  
+    
+    <div class="block__content">
+    
+
+
+<div class="field field--body basic__body">
+      <div class="field__items">
+          <div class="field__item"><ul>
+	<li><a href="http://policy.amfmwv.com:80">PolicyTech Login</a></li>
+	<li><a href="http://amfmwv.training.reliaslearning.com/lib/Authenticate.aspx?ReturnUrl=%2f">Relias Learning Login</a></li>
+	<li><a href="#employee-resources">Employee Resources</a></li>
+	<li><a href="http://unity.phones.amfmwv.com/inbox/">Cisco Unity Connection Login</a></li>
+	<li><a href="https://amfm-rds1.amfmwv.com/RDWeb/">Remote Applications (Sage &amp; Softwriters)</a></li>
+	<li><a href="http://statwv.com/">STAT EMS</a></li>
+	<li><a href="https://amfm.axomo.com/">Order Employee Name Badges Here</a></li>
+	<li><a href="https://app.safekeepingapp.com/">Safekeeping Clinical Login</a></li>
+	<li><a href="https://admin.safekeepingapp.com/login.php">Safekeeping Admin Login</a></li>
+	<li><a href="https://qsep.cms.gov/welcome.aspx">Targeted COVID-19 Training for Nursing Homes</a></li>
+	<li><a href="https://data.cms.gov/stories/s/COVID-19-Nursing-Home-Data/bkwz-xpvg">CMS COVID-19 Nursing Home Data</a></li>
+	<li><a href="https://dhhr.wv.gov/COVID-19/Pages/default.aspx">WV COVID 19 Prevalence Rate Map</a></li>
+</ul>
+</div>
+        </div>
+  </div>
+
+  </div>
+  
+  </div>
+
+  </div>
+</div>
+        </div>
+    
+      </section>
+  <section  style="border-radius: 5px;" class="block block--layout layout--vpadding-regular layout--hpadding-regular" >
+    <div  class="layout__region layout__region--top">
+  
+<div   class="block block--basic basic"
+   class="block block--basic basic" id="block-454"
+>
+  
+  
+    
+    <div class="block__content">
+    
+
+
+<div class="field field--body basic__body">
+      <div class="field__items">
+          <div class="field__item"><h2 class="text-align-center">Department &amp; Reference Links</h2>
+</div>
+        </div>
+  </div>
+
+  </div>
+  
+  </div>
+
+</div>
+
+        <div  class="layout__container layout__container--maxdesk">
+                      <div  class="layout layout--onecolumn layout--onecolumn-100 layout--width-67">
+        <div  class="layout__region layout__region--content">
+          
+<div   class="block block--basic basic"
+   class="block block--basic basic" id="block-455"
+>
+  
+  
+    
+    <div class="block__content">
+    
+
+
+<div class="field field--body basic__body">
+      <div class="field__items">
+          <div class="field__item"><dl class="ckeditor-accordion">
+	<dt>Nursing &amp; Clinical</dt>
+	<dd>
+	<h3>Clinical Logins</h3>
+
+	<ul>
+		<li><a href="https://www.abaqis.com/login">Abaqis Login</a></li>
+		<li><a href="https://qies-east.cms.gov/dana-na/auth/url_default/welcome.cgi">CMS QIES East Login - Requires Internet Explorer 11</a></li>
+		<li><a href="https://apps.availity.com/availity/web/public.elegant.login?goto=https%3A%2F%2Fapps.availity.com%2Favaility%2Fweb%2FHome">Availity Login - Requires Internet Explorer 11</a></li>
+		<li><a href="https://c3wv.apshealthcare.com/">APS Healthcare CareConnection Login</a></li>
+		<li><a href="https://navinet.navimedix.com">NaviNet Login</a></li>
+		<li><a href="https://healthpoint.medicity.net/webmail">Raleigh General Healthpoint Login</a></li>
+		<li><a href="https://ibm-rdp.bmh.org/RDWeb/">BMH Login</a></li>
+		<li><a href="https://www.ltcpcms.com/LTCPCMSTracker/Security/SignIn.aspx">LTCPCMS Tracker Login</a></li>
+		<li><a href="https://greenbriermanor2115.matrixcare.com/">MatrixCare Greenbrier Login</a></li>
+		<li><a href="https://ssd999904.matrixcare.com/">MatrixCare Grafton Login</a></li>
+		<li><a href="https://www.epocrates.com/sessionManager.do?referurl=/online.do&amp;refernext=https://rxonline.epocrates.com/rxmain.jsp" target="_self" title="Epocrates">Epocrates</a></li>
+	</ul>
+
+	<h3>Laboratory &amp; Radiology Services Logins</h3>
+
+	<ul>
+		<li><a href="https://www.labcentral.net/">Lab Central Login</a></li>
+		<li><a href="https://qlabs.argolims.net/">Q Labs Login</a></li>
+		<li><a href="https://www.labcorpbeacon.com/results-web/results/authentication/public/login">LabCorp Beacon Login</a></li>
+		<li><a href="https://lab-services.ovation.io/portal/organizations/299/requisitions">PCR Test Results</a></li>
+		<li><a href="https://citrix.uhcwv.org:444/Citrix/XenApp/auth/login.aspx">United Hospital Center Login</a></li>
+		<li><a href="https://www.lifepoint60.com/uml/lts/login/login.cfm?js=1&amp;refresh=no">WV UML Login</a></li>
+		<li><a href="https://plv.ps-msite.com/Citrix/plv/auth/login.aspx">Pleasant Valley Hospital Lab Login</a></li>
+		<li><a href="https://connectonline.tridentusahealth.com">Mobilex USA Login</a></li>
+		<li><a href="https://support.mobilexusa.com/mxlive">Mobilex USA Login - Old</a></li>
+		<li><a href="https://tridentusa.ilabbill.com">Trident USA Billing Login</a></li>
+	</ul>
+
+	<h3>Online Resources</h3>
+
+	<ul>
+		<li><a href="http://www.cdc.gov/">Centers for Disease Control Website</a></li>
+		<li><a href="http://www.kci1.com/">KCI Website</a></li>
+		<li><a href="http://www.icd10data.com/">ICD-10 Data Website</a></li>
+		<li><a href="http://www.pointright.com/" target="_self" title="Point Right">Point Right</a></li>
+		<li><a href="https://translate.google.com/">Translation Service</a></li>
+		<li><a href="http://www.nhqualitycampaign.org/" target="_self" title="Advancing Excellence ">Advancing Excellence</a></li>
+		<li><a href="https://www.qtso.com/">CMS</a></li>
+		<li><a href="https://www.nutritioncaremanual.org/">Nutrition Care Manual</a></li>
+		<li><a href="https://www.cdc.gov/infectioncontrol/guidelines/isolation/appendix/index.html">CDC Appendix A</a></li>
+	</ul>
+	</dd>
+	<dt>Activities</dt>
+	<dd>
+	<ul>
+		<li><a href="http://www.ltc-activitydirector.com/">LTC Activity Director</a></li>
+		<li><a href="http://www.activityconnection.com/">Activity Connection</a></li>
+		<li><a href="http://printablesfree.com/">Printables Free</a></li>
+	</ul>
+	</dd>
+	<dt>Billing, Financial &amp; Insurance</dt>
+	<dd>
+	<h2>Billing &amp; Insurance</h2>
+
+	<ul>
+		<li><a href="http://www.palmettogba.com/">Palmetto GBA</a></li>
+		<li><a href="https://selfservice.healthaxis.com/login.asp?c=aag">UMWA / HealthSmart Login</a></li>
+		<li><a href="https://www.wvmmis.com/">WVMMIS</a></li>
+		<li><a href="http://www.ssa.gov/">Social Security Administration</a></li>
+		<li><a href="https://www.myabilitynetwork.com/Auth/">MyAbility</a></li>
+		<li><a href="http://www.cgsmedicare.com/parta/index.html">CSG Medicare</a></li>
+		<li><a href="https://apps.availity.com/availity/web/public.elegant.login">Availity</a></li>
+		<li><a href="https://www.waystar.com/">Waystar</a></li>
+	</ul>
+
+	<h3>Part D Plans</h3>
+
+	<ul>
+		<li><a href="https://www.aarpmedicareplans.com/health-plans/prescription-drug-plans/prescription-drug-list.html" target="_self" title="AARP MedicareRx Preferred">AARP MedicareRx Preferred</a></li>
+		<li><a href="http://silverscript.com/documentslibrary/documents_library.aspx" target="_self" title="SilverScript">SilverScript</a></li>
+		<li><a href="http://www.express-scripts.com/services/physicians/medicare/" target="_self" title="Express Scripts Medicare">Express Scripts Medicare</a></li>
+		<li><a href="https://www.wellcarepdp.com/medication_guide/default" target="_self" title="Wellcare">Wellcare</a></li>
+		<li><a href="http://www.dhhr.wv.gov/bms/Pharmacy/Pages/pdl.aspx" target="_self" title="DHHR - Preferred Drug List">DHHR - Preferred Drug List</a></li>
+		<li><a href="https://www.humana.com/medicare/pharmacy/tools/medicare-drug-list/" target="_self" title="Humana ">Humana</a></li>
+		<li><a href="http://www.q1medicare.com/PartD-BrowseMedicarePartDPlanFormulary.php" target="_self" title="Q1Medicare.com">Q1Medicare.com</a></li>
+		<li><a href="https://rxtools.aetnamedicare.com/plancompare/consumer/2013/individual/Home/Home.aspx?=&amp;CvsPdpPlan=true" target="_self" title="Aetna CVS">Aetna CVS</a></li>
+	</ul>
+
+	<h3>Banking &amp; Financial</h3>
+
+	<ul>
+		<li><a href="https://smartpay.profitstars.com/business/#/dashboard">City National RDC</a></li>
+		<li><a href="http://www.myvirtualmerchant.com/VirtualMerchant/">City Merchant Services</a></li>
+		<li><a href="http://www.ordermychecks.com/login_a.jsp">City National Check Orders</a></li>
+	</ul>
+	</dd>
+	<dt>Vendors &amp; Online Ordering</dt>
+	<dd>
+	<ul>
+		<li><a href="http://shop.op247.com/2541/Login">Chapman Ordering</a></li>
+		<li><a href="https://www.directsupply.net/">Direct Supply</a></li>
+		<li><a href="http://twinmed.com/">TwinMed</a></li>
+		<li><a href="http://www.medline.com/">Medline</a></li>
+		<li><a href="https://secure.mygsonline.com/">Gulf South Ordering</a></li>
+		<li><a href="https://www.usps.com/">U.S. Postal Service</a></li>
+		<li><a href="http://www.fedex.com/us/">FedEx</a></li>
+		<li><a href="http://www.ups.com/?Site=Corporate&amp;cookie=us_en_home&amp;setCookie=yes">UPS</a></li>
+		<li><a href="https://vmrx.pharmerica.com/Account/LogOn">Pharmerica</a></li>
+		<li><a href="http://myaccount.mp-b.com/">Morgantown Printing &amp; Binding</a></li>
+		<li><a href="https://mylearning.instructure.com/login/canvas">CNA Online</a></li>
+	</ul>
+	</dd>
+	<dt>HR</dt>
+	<dd>
+	<ul>
+		<li><a href="https://www.nursys.com/">WV RN / LPN Verification</a></li>
+		<li><a href="https://wvcares.wvdhhr.org">WV CARES Login</a></li>
+		<li><a href="http://exclusions.oig.hhs.gov/" target="_self" title="OIG Excluded List">OIG Excluded List</a></li>
+		<li><a href="https://uenroll.identogo.com/">IdentoGO / IDEMIA</a></li>
+		<li><a href="https://ohflac.wvdhhr.org/Apps/Lookup/NALookup" target="_self" title="Nurse Aide Verification ">Nurse Aide Verification</a></li>
+		<li><a href="https://e-verify.uscis.gov/web/Login.aspx">E-Verify</a></li>
+		<li><a href="https://slx5.smartlinxsolutions.com/smartlinx5/#/HR-Employees">Smartlinx</a></li>
+	</ul>
+	</dd>
+	<dt>Therapy</dt>
+	<dd>
+	<ul>
+		<li><a href="http://acp.ceu360.com">ACP</a></li>
+		<li><a href="https://login.optimahcs.com/" target="_self" title="RehabOptima">RehabOptima</a></li>
+		<li><a href="http://www.hep2go.com/" target="_self" title="HEP2GO">HEP2GO</a></li>
+		<li><a href="http://printablesfree.com">Printables Free</a></li>
+		<li><a href="https://www.sralab.org/rehabilitation-measures">Rehabilitation Measures Database</a></li>
+		<li><a href="https://www.thebcat.com/">The Bcat</a></li>
+		<li><a href="https://www.myoptumhealthphysicalhealth.com/">Optum Login</a></li>
+	</ul>
+	</dd>
+	<dt>Government &amp; Regulatory</dt>
+	<dd>
+	<ul>
+		<li><a href="http://www.osha.gov/" target="_self" title="OSHA">OSHA</a></li>
+		<li><a href="http://www.medicare.gov">Medicare.gov</a></li>
+		<li><a href="https://www.cms.gov/" target="_self" title="CMS">CMS</a></li>
+		<li><a href="http://www.ssa.gov/">Social Security Administration</a></li>
+		<li><a href="http://www.dhhr.wv.gov/bms/BMSPUB/Pages/default.aspx/">WV Medicaid Publications</a></li>
+		<li><a href="https://www.nsopw.gov">Depart. of Justice National Sex Offender Public Website</a></li>
+		<li><a href="https://apps.wv.gov/StatePolice/SexOffender">WV State Policy Sex Offender Registry</a></li>
+	</ul>
+	</dd>
+	<dt>Professional Associations &amp; Boards</dt>
+	<dd>
+	<h2>Associations</h2>
+
+	<ul>
+		<li><a href="http://www.ahcancal.org/" target="_self" title="American Health Care Association">American Health Care Association</a></li>
+		<li><a href="http://www.asha.org/" target="_self" title="American Speech-Language-Hearing Association">American Speech-Language-Hearing Association</a></li>
+		<li><a href="http://www.aota.org/" target="_self" title="American Occupational Therapy Association">American Occupational Therapy Association</a></li>
+		<li><a href="http://www.apta.org/" target="_self" title="American Physical Therapy Association">American Physical Therapy Association</a></li>
+		<li><a href="http://www.anfponline.org/" target="_self" title="Association of Nutrition &amp; Foodservice Professionals">Association of Nutrition &amp; Foodservice Professionals</a></li>
+		<li><a href="http://www.wvhca.org/" target="_self" title="WV Healthcare Association">WV Healthcare Association</a></li>
+	</ul>
+
+	<h3>Boards</h3>
+
+	<ul>
+		<li><a href="http://www.state.wv.us/wvnha/default.cfm" target="_self" title="WV Nursing Home Administrators Board">WV Nursing Home Administrators Board</a></li>
+		<li><a href="http://wvsocialworkboard.org/" target="_self" title="WV Social Workers Board">WV Social Workers Board</a></li>
+		<li><a href="http://www.wvrnboard.com/default.asp" target="_self" title="WV R.N. Board">WV R.N. Board</a></li>
+		<li><a href="https://launchpad.cebroker.com/login">WV R.N. Board CE Tracker</a></li>
+		<li><a href="http://www.lpnboard.state.wv.us/" target="_self" title="WV L.P.N. Board">WV L.P.N. Board</a></li>
+		<li><a href="http://www.wvbbc.com/">WV Board of Barbers &amp; Cosmetologists</a></li>
+		<li><a href="http://www.wvspeechandaudiology.com/" target="_self" title="WV Board of Speech Pathology">WV Board of Speech Pathology</a></li>
+		<li><a href="http://www.wvbot.org/" target="_self" title="www.wvbot.org">WV Board of Occupational Therapy</a></li>
+		<li><a href="http://www.wvbopt.com/" target="_self" title="www.wvbopt.com">WV Board of Physical Therapy</a></li>
+		<li><a href="http://www.hca.wv.gov/" target="_self" title="WV Healthcare Authority">WV Healthcare Authority</a></li>
+	</ul>
+	</dd>
+	<dt>Dietary<a id="rds-dietary" name="rds-dietary"></a></dt>
+	<dd>
+	<ul>
+		<li><a href="http://www.crookbros.com/" target="_self" title="Crook Brothers Produce">Crook Brothers Produce</a></li>
+		<li><a href="https://www.foodservicedirectorder.com/order/faces/oracle/webcenter/portalapp/pages/login.jspx">US. Foods</a></li>
+		<li><a href="http://ismenumanager.com/" target="_self" title="RMM">RMM</a></li>
+		<li><a href="https://www.thediningmanager.com/login">Dining Manager</a></li>
+	</ul>
+	</dd>
+	<dt>Employee Resources<a id="employee-resources" name="employee-resources"></a></dt>
+	<dd>
+	<ul>
+		<li><a href="http://bacwv.com/">Benefits Assistance Corp. Employee Access</a></li>
+		<li><a href="https://www.guidanceresources.com/groWeb/login/login.xhtml">Guidance Resources EAP Resources</a></li>
+		<li><a href="https://www.expressscripts.com/">Express Scripts</a></li>
+		<li><a href="https://nb.fidelity.com/public/nb/default/home">Fidelity Net Benefits Login</a></li>
+	</ul>
+	</dd>
+	<dt>Pharmacy</dt>
+	<dd>
+	<ul>
+		<li><a href="https://amfm-rds1.amfmwv.com/RDWeb/">FrameworkLTC &amp; FrameworkECM</a></li>
+		<li><a href="https://frameworklink.amfmwv.com/frameworklink/">FrameworkLink</a></li>
+		<li><a href="http://edge-web/FrameworkBI/DashboardMain.aspx">FrameworkBI</a></li>
+		<li><a href="http://emeeting.frameworkltc.com:8040">Softwriter's Remote Connection</a></li>
+		<li><a href="http://emeeting.frameworkltc.com/SoftWriters/login.aspx">Softwriter's Customer Engagement Zone</a></li>
+		<li><a href="https://www.covermymeds.com">Cover My Meds</a></li>
+		<li><a href="https://csappwv.com/Account/Login.aspx?ReturnUrl=%2f">WV Board of Pharmacy </a></li>
+	</ul>
+	</dd>
+	<dt>IT Links</dt>
+	<dd>
+	<ul>
+		<li><a href="http://www.adobe.com/creativecloud.html#">Adobe Login</a></li>
+		<li><a href="https://account.meraki.com/secure/login/dashboard_login/">Meraki Login</a></li>
+		<li><a href="https://login.mcafee.com/v1">McAfee ePolicy Orchestrator Cloud Login</a></li>
+		<li><a href="https://statuspage.freshping.io/1497-AmericanMedicalFacilitiesManagement">Website Status Page</a></li>
+		<li><a href="https://ui2.manage.mcafee.com/ComputerMgmt/agentPackage.get?token=cb91fb5de631d2bf475d6c74e2294dd8cb36cc7d">Install McAfee Installer</a></li>
+		<li><a href="https://get.teamviewer.com/4eedrwj">Teamviewer Installer</a></li>
+		<li><a href="http://n63.meraki.com/ci-downloads/97358a17ac0d80c2f7a027282f5af5bea8e05489/MerakiPCCAgent.msi">Meraki MDM Installer</a></li>
+	</ul>
+
+	<h3>Barracuda Devices</h3>
+
+	<ul>
+		<li><a href="https://login.barracudanetworks.com/auth/login/">Barracuda Customer Login</a></li>
+		<li><a href="https://barracuda690.amfmwv.com">Backup Appliance</a></li>
+	</ul>
+
+	<h3>​Phone System</h3>
+
+	<ul>
+		<li><a href="https://publisher.phones.amfmwv.com/">Cisco Publisher</a></li>
+		<li><a href="https://unity.phones.amfmwv.com/">Cisco Unity Connection</a></li>
+		<li><a href="https://amfmimp01.amfmwv.com/">Cisco IM and Presence</a></li>
+	</ul>
+
+	<h3>Legacy Applications</h3>
+
+	<ul>
+		<li><a href="http://kronosweb.amfmwv.com/wfc/logon/">Kronos</a></li>
+		<li><a href="http://vision.amfmwv.com/login.aspx?ReturnUrl=%2fDefault.aspx">Caretracker</a></li>
+	</ul>
+	</dd>
+</dl>
+</div>
+        </div>
+  </div>
+
+  </div>
+  
+  </div>
+
+        </div>
+      </div>
+              </div>
+    
+    <div >
+  
+</div>
+  </section>
+
+  </div>
+  
+</article>
+
+  </div>
+  
+  </div>
+
+
+    </div>
+  
+
+
+  </div>
+</main>
+<footer class="site__footer">
+  <div class="layout__container layout__container--maxdesk">
+    <div class="layout layout--footer">
+      <div class="layout__region--first">
+  
+    <div     class="region site__footer_branding"
+  >
+  
+    
+<div   id="block-sitebranding-2" class="block--branding-footer"
+>
+
+  <div class="block__frame">
+    
+        
+                <a href="/" title="Home" rel="home" class="site-logo">
+        <picture>
+          <source srcset="./logo.svg" media="(min-width: 48rem)" type="image/svg+xml">
+          <img src="./logo-horizontal.svg" />
+        </picture>
+      </a>
+            </div>
+
+</div>
+
+
+    </div>
+  
+
+</div>
+      <div class="layout__region--second">
+  
+    <div     class="region site__footer_nav"
+  >
+  
+    <nav role="navigation" aria-labelledby="block-mainnavigation-2-menu" id="block-mainnavigation-2">
+            
+  <h2 class="visually-hidden" id="block-mainnavigation-2-menu">Main navigation</h2>
+  
+
+        
+              <ul class="nav nav--footer">
+              <li>
+        <a href="/why-amfm" data-drupal-link-system-path="node/32">Why AMFM?</a>
+                                <ul>
+              <li>
+        <a href="/our-story" data-drupal-link-system-path="node/34">Our Story</a>
+              </li>
+          <li>
+        <a href="/amfm-faces-care" data-drupal-link-system-path="node/35">AMFM Faces of Care</a>
+              </li>
+          <li>
+        <a href="/awards" data-drupal-link-system-path="node/51">Awards</a>
+              </li>
+        </ul>
+  
+              </li>
+          <li>
+        <a href="/services-overview" data-drupal-link-system-path="node/7">Services</a>
+                                <ul>
+              <li>
+        <a href="/skilled-nursing-0" data-drupal-link-system-path="node/40">Skilled Nursing</a>
+              </li>
+          <li>
+        <a href="/rehabilitation" data-drupal-link-system-path="node/41">Rehabilitation</a>
+              </li>
+          <li>
+        <a href="/long-term-care" data-drupal-link-system-path="node/42">Long-Term Care</a>
+              </li>
+        </ul>
+  
+              </li>
+          <li>
+        <a href="/family-resources" data-drupal-link-system-path="node/11">Family Resources</a>
+                                <ul>
+              <li>
+        <a href="/visitation" data-drupal-link-system-path="node/37">Visitation</a>
+              </li>
+          <li>
+        <a href="/faqs" data-drupal-link-system-path="node/38">FAQs</a>
+              </li>
+        </ul>
+  
+              </li>
+          <li>
+        <a href="/careers" data-drupal-link-system-path="node/30">Careers</a>
+                                <ul>
+              <li>
+        <a href="/current-career-opportunities" data-drupal-link-system-path="node/44">Jobs at AMFM</a>
+              </li>
+          <li>
+        <a href="/cna-classes" data-drupal-link-system-path="node/45">CNA Classes</a>
+              </li>
+        </ul>
+  
+              </li>
+          <li>
+        <a href="/locations" data-drupal-link-system-path="node/10">Locations</a>
+              </li>
+          <li>
+        <a href="/newsroom" data-drupal-link-system-path="node/31">Newsroom</a>
+                                <ul>
+              <li>
+        <a href="/video-library" data-drupal-link-system-path="node/47">Video Library</a>
+              </li>
+          <li>
+        <a href="/blog" data-drupal-link-system-path="node/48">Long-Term Care Blog</a>
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+
+    </div>
+  
+
+</div>
+    </div>
+    <div class="layout layout--footer-utility">
+      <div class="layout__region--first">
+  
+    <div     class="region site__footer_utility"
+  >
+  
+    <div  id="block-footerutilitynavigation" class="block--footer-utility-navigation">
+            
+  <h2 class="visually-hidden" id="block-footerutilitynavigation-menu">Footer Utility Navigation</h2>
+  
+
+        <div class="legal">&copy; <abbr title="American Medical Facilities Management">AMFM</abbr> 2020</div>
+    
+              <ul class="nav">
+              <li>
+        <a href="/social-media-policy" data-drupal-link-system-path="node/118">Social Media Policy</a>
+              </li>
+          <li>
+        <a href="/non-discrimination-notice" data-drupal-link-system-path="node/119">Non-discrimination notice</a>
+              </li>
+        </ul>
+  
+
+
+  </div>
+
+
+    </div>
+  
+
+</div>
+      <div class="layout__region--second">
+  
+    <div     class="region site__footer_social"
+  >
+  
+    
+<div   id="block-socialmedialinks" class="block--footer-social block-social-media-links block block--"
+   id="block-" class="block--footer-social block-social-media-links block block--"
+>
+  
+  
+    
+    <div class="block__content">
+    
+
+<ul class="social-media-links--platforms platforms inline horizontal">
+      <li>
+      <a class="social-media-link-icon--twitter" href="https://www.twitter.com/amfmwv"  >
+        <span class='fa fa-twitter fa-lg'></span>
+      </a>
+
+          </li>
+      <li>
+      <a class="social-media-link-icon--facebook" href="https://www.facebook.com/American-Medical-Facilities-Management-AMFM-324118651006191"  >
+        <span class='fa fa-facebook fa-lg'></span>
+      </a>
+
+          </li>
+      <li>
+      <a class="social-media-link-icon--linkedin" href="https://www.linkedin.com/company/10603658/"  >
+        <span class='fa fa-linkedin fa-lg'></span>
+      </a>
+
+          </li>
+  </ul>
+
+  </div>
+  
+  </div>
+
+
+    </div>
+  
+
+</div>
+    </div>
+  </div>
+</footer>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/117","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"fitvids":{"selectors":"body\r,.node\r,.block\r,.remote-video__media-oembed-video","custom_vendors":"iframe[src*=\u0022https:\/\/vimeo.com\u0022],iframe[src*=\u0022https%3A\/\/vimeo.com\u0022]","ignore_selectors":""},"google_analytics":{"account":"UA-67339707-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"ckeditorAccordion":{"accordionStyle":{"collapseAll":1,"keepRowsOpen":0}},"user":{"uid":0,"permissionsHash":"0feb6c743b2219bdbd8e8540c764109a4819c5055ce2ce696c10b223e83b783a"}}</script>
+<script src="./js/js_aRVJ3MdDVYsxtzIyliTzcm576TFmee9hAxhtWFHgGbw.js"></script>
+<script src="https://static.addtoany.com/menu/page.js" async></script>
+<script src="./js/js_y_g_HaBob5zv3uAlJhm3w_P2ziuLRQNCQ6NvMgDYOt0.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-8aca5d57fa79f2db813","applicationID":"680915709","transactionName":"NlQHZ0tTV0UCBkBYCw8eJFBNW1ZYTBVVVgE+UgRQUVc=","queueTime":0,"applicationTime":22,"atts":"GhMEEQNJREs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
